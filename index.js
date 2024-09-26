@@ -32,6 +32,11 @@ app.use((req, res) => {
   res.status(404).send(
     "<h1>Page not found on the server</h1>")
 })
+  
+app.get('/api/hello', function (req, res) {
+  res.json({ greeting: 'hello API' });
+});
+
 // listen for requests :)
 var listener = app.listen(process.env.PORT || 3000, function() {
   console.log('Your app is listening on port ' + listener.address().port);
